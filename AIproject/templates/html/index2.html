@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>気分に合った旅行プラン</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>気分に合った旅行プランを提案します</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">旅行プランを作成</button>
+        </form>
+
+        {% if travel_plan %}
+        <h2>旅行プラン</h2>
+        <p>{{ travel_plan|safe }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
