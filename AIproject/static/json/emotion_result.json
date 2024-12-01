@@ -1,1 +1,1 @@
-{"captured_emotions": [{"box": [658, 1178, 992, 1207], "emotions": {"angry": 0.06, "disgust": 0.0, "fear": 0.04, "happy": 0.0, "sad": 0.12, "surprise": 0.0, "neutral": 0.77}}], "dominant_emotion": "neutral", "emotion_score": 0.77}
+{"captured_emotions": [{"box": [38, 38, 85, 108], "emotions": {"angry": 0.17, "disgust": 0.0, "fear": 0.04, "happy": 0.0, "sad": 0.63, "surprise": 0.0, "neutral": 0.15}}], "dominant_emotion": "sad", "emotion_score": 0.63}
