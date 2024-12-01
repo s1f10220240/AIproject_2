@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection Result</title>
+</head>
+<body>
+    <h1>感情分析結果</h1>
+    {% if image_url %}
+        <img src="{{ image_url }}" alt="Uploaded Image">
+    {% else %}
+        <p>画像の取得に失敗しました。もう一度、やり直してください。</p>
+    {% endif %}
+    <p><strong>Dominant Emotion:</strong> {{ emotion }}</p>
+    <p><strong>Score:</strong> {{ score }}</p>
+</body>
+</html>
