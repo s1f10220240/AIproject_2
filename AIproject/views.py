@@ -5,6 +5,8 @@ import os
 import json
 from fer import FER
 import matplotlib.pyplot as plt
+from PIL import Image
+import numpy as np
 
 
 def upload_image(request):
@@ -39,9 +41,17 @@ def analyze_emotion():
     if not images:
         raise FileNotFoundError("No images found in the uploads directory.")
 
+    images = sorted(
+    images,
+    key=lambda x: os.path.getmtime(os.path.join(uploads_directory, x)),
+    reverse=True)
+
+    # 最新の画像を取得
     image_path = os.path.join(uploads_directory, images[0])
-    
-    image = plt.imread(image_path)
+
+    # 画像をPILで読み込む
+    pil_image = Image.open(image_path).convert("RGB")  # RGBAをRGBに変換
+    image = np.array(pil_image)  # NumPy配列に変換
     emo_detector = FER(mtcnn=True)
 
     # 感情認識の実行
@@ -64,6 +74,11 @@ def show_image(request):
 
     if not images:
         raise FileNotFoundError("No images found in the uploads directory.")
+
+    images = sorted(
+    images,
+    key=lambda x: os.path.getmtime(os.path.join(uploads_directory, x)),
+    reverse=True)
 
     # 最初の画像のURLを生成
     image_url = settings.MEDIA_URL + 'uploads/' + images[0]
