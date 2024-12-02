@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Detection Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>感情分析結果</h1>
-    {% if image_url %}
-        <img src="{{ image_url }}" alt="Uploaded Image">
-    {% else %}
-        <p>画像の取得に失敗しました。もう一度、やり直してください。</p>
-    {% endif %}
-    <p><strong>Dominant Emotion:</strong> {{ emotion }}</p>
-    <p><strong>Score:</strong> {{ score }}</p>
+    <div class="container">
+        <h1>旅行プラン！</h1>
+        {% if travel_plan %}
+            <p>{{ travel_plan|linebreaks }}</p>
+        {% endif %}
+        <a href="../">ホーム</a>
+    </div>
 </body>
 </html>

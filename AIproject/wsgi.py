@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
 """
 
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 from django.core.wsgi import get_wsgi_application
 

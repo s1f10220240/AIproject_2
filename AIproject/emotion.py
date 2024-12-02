@@ -2,6 +2,11 @@ from fer import FER
 import matplotlib.pyplot as plt
 
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+import tensorflow as tf
+
 #画像読み込み
 test_image = plt.imread("..\\img\\怒り\\31046586_s.jpg")
 

@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/asgi/
 """
 
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 from django.core.asgi import get_asgi_application
 

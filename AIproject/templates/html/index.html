@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>画像アップロード</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>画像アップロード</h1>
+    <!---
     <form action="{% url 'upload_image' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="image" required>
         <button type="submit">アップロード</button>
     </form>
+    --->
+
+
+    <div class="container">
+        <h1>気分に合った旅行プラン</h1>
+        <form method="POST" action="{% url 'upload_image' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image" required>
+            {{ form.as_p }}
+            <button type="submit">旅行プランを作成！</button>
+        </form>
+    </div>
 </body>
 </html>
